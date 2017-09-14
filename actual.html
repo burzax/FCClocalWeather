@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get location and weather forecast</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/af637757c1.js"></script>
+	<script src="clean2.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5UER7_6bSfiinn-A4vvlQXFzZ-EVOPS0"></script>
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="clean.css">
+	<link rel="stylesheet" type="text/css" href="weather-icons.css">
+	<script type="text/javascript">
+		$(function(){
+        try{
+            
+            LocalWeather.initializeMap("map");
+            LocalWeather.setMarker();
+            
+            
+        } catch(e){
+            $("#error").html(e.description);
+        }
+    	});
+	</script>
+</head>
+<body>
+<div class="container">
+	<div class="sidebar" >
+		<div id="temprtr">
+	        <h1>WEATHER APP</h1>
+	        <p class="test"></p>
+	        <p class="ico"></p>
+	        <!-- <i class="wi wi-owm-232"></i> -->
+	        <table>
+	        	<tr>
+	        		<td>
+	        			<label for="fahr">&degF</label>
+	        			<input type="radio" name="temp" id="fahr">
+	        		</td>
+	        		<td>
+	        			<label for="cels">&degC</label>
+	        			<input type="radio" name="temp" id="cels">
+	        		</td>
+	        	</tr>
+	        </table>
+    	</div>
+		<div class="input-group">
+	        <input id="address" type="text" class="form-control" placeholder="Search">
+	        <div class="input-group-btn">
+	        	<button class="btn btn-default" type="submit" id="submit"><i class="glyphicon glyphicon-search"></i></button>
+	        </div>
+	         <!-- id="submit" type="button" value="Check"> -->
+    	</div>
+	</div>
+	<div class="content" id="map"></div>
+</div>
+</body>
+</html>
