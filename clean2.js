@@ -156,7 +156,7 @@ var LocalWeather = {
 }
 
 function getLocation(callback) {
-  $.get('http://freegeoip.net/json/', function (response) {
+  $.get('https://freegeoip.net/json/', function (response) {
       console.log(response);
       // $('.test3').html('<h2>Your location is: ' +  data.city + '.</h2>');  
       callback.call(this, response.city);
@@ -175,7 +175,7 @@ function getTemperature(location) {
     units = 'metric';
     temp = ' &degC';
   }
-$.get('http://api.openweathermap.org/data/2.5/weather?appid=24c0a72bfc696a4a9ab92c98af2daee1&q=' + city + '&units=' + units, function (data) {
+$.get('https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?appid=24c0a72bfc696a4a9ab92c98af2daee1&q=' + city + '&units=' + units, function (data) {
         
         $('.test').html('<h4>Temperature in ' +  city + ' is ' + data.main.temp + temp + '</h4>'
         );
