@@ -113,7 +113,7 @@ var LocalWeather = {
     },
     setMarker: function() {
       //get your current location by your IP address - not that accurate, but still helpful to initialize map
-        $.get('http://freegeoip.net/json/', function(data) {
+        $.get('https://freegeoip.net/json/', function(data) {
             var latitude = data.latitude;
             var longitude = data.longitude;
             var latlng = new google.maps.LatLng(latitude, longitude);
